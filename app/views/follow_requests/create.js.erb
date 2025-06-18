@@ -1,0 +1,12 @@
+var new_follow_box = $
+(
+  "<%= j(render 'follow_requests/follow_unfollow',
+      :sender => current_user,
+      :recipient => @follow_request.recipient) %>"
+);
+
+new_follow_box.hide();
+
+$("#<%= dom_id(@follow_request.recipient, :follow_request_box) %>").html(new_follow_box);
+
+new_follow_box.fadeIn();

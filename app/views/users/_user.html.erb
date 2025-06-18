@@ -103,7 +103,7 @@
     </div>
 
     <div class="row mb-4">
-      <div class="col">
+      <div id="<%= dom_id(@user, :follow_request_box) %>" class="col">
         <%= render "follow_requests/follow_unfollow", sender: current_user, recipient: @user %>
       </div>
     </div>
