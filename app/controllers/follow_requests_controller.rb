@@ -8,11 +8,7 @@ class FollowRequestsController < ApplicationController
 
     respond_to do |format|
       if @follow_request.save
-        format.html do
-          redirect_to(
-            user_path(@follow_request.recipient.username), 
-            { :notice => "Follow request was successfully created." } )
-        end
+        format.html { redirect_back fallback_location: root_url, notice: "Follow request was successfully created." }
         format.json { render :show, status: :created, location: @follow_request }
         format.js
       else
