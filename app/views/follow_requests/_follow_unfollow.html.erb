@@ -1,5 +1,5 @@
 <% unless sender == recipient %>
-  <% follow_request = {dom_id(follow_request)} %>
+  <% follow_request = current_user.sent_follow_requests.find_by(recipient: recipient) %>
 
   <% if follow_request %>
     <% if follow_request.pending? %>

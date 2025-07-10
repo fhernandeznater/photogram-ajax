@@ -1,7 +1,7 @@
 <%= form_with(
       :model => follow_request,
       :local => false,
-      :class => "d-inline-block"
+      :class => "#{dom_id(follow_request.recipient)} d-inline-block"
   ) do |form| %>
   <% if follow_request.errors.any? %>
     <div id="error_explanation">
