@@ -1,0 +1,4 @@
+var new_like_box = $("<%= j(render 'photos/likes', :photo => @like.photo) %>").hide();
+
+$("#<%= dom_id(@like.photo, :like_box) %>").html(new_like_box);
+new_like_box.fadeIn();
